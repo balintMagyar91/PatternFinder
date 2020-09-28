@@ -1,0 +1,327 @@
+html,body {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after { box-sizing: inherit; }
+
+  /* Layout CSS */
+  
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  body, main {
+    display: inline;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background: rgb(0,191,255);
+    justify-content: flex-start;
+  }
+  
+  main {
+    height: 100%;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  
+  header {
+    width: 100vw;
+    height: calc(100vh/8);
+    background: orange;
+    overflow: hidden;
+  }
+
+  header .exit {
+    width: calc(100vh/8);
+    height: 100%;
+    background-color: red;
+    background: url("media/exit.png") no-repeat center;
+    background-size: 100%;
+    float: right;
+    visibility: hidden;
+    border-style: outset;
+    border-width: 5px;
+  }
+
+  div.exit:hover {
+    border-width: 10px;
+  }
+  
+  section,
+  footer {
+    width: 50vw;
+    max-width: calc(100vh - 100vh/8*2);
+    float: left;
+  }
+  
+  section {
+    background: rgb(0,191,255);
+    height: 50vw;
+    max-height: calc(100vh - 100vh/8*2);
+  }
+
+  footer {
+    background: blanchedalmond;
+    height: 50vw;
+    max-height: calc(100vh - 100vh/8*2);
+    border: 2px solid rgb(0,191,255);
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  table {
+    width: 80%;
+    height: 80%;
+    table-layout: fixed;
+    margin: 10%;
+  }
+  
+  td {
+    width: 33%;
+    height: 33%;
+    max-width: 33%;
+    max-height: 33% !important;
+    background: white;
+    text-align: center;
+    padding: 2px;
+    margin: 0px;
+    border: 2px solid rgb(0,191,255);
+    border-radius: 10px;
+  }
+
+  div.dropzone {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    background: white;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 10px;
+  }
+  
+  div.draggable {
+    background: turquoise;
+    position: absolute;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+
+  div.filler {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  div.nonfiller {
+    width: calc((100vw / 3) - 2px) !important;
+    max-width: calc(((100vh - 264px) / 3) - 12px) !important;
+    height: calc((100vw / 3) - 2px) !important;
+    max-height: calc(((100vh - 264px) / 3) - 12px) !important;
+  }
+
+  div.shadow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: black;
+    opacity: 0.8;
+    align-items: center;
+    text-align: center;
+  }
+
+  div.startPage {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgb(0,191,255);
+    text-align: center;
+  }
+
+  div.level {
+    width: calc(100vh/3);
+    height: calc(100vh/3);
+    background-color: lightblue;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 10% 0% 0% 0%;
+    border-style: outset;
+    border-width: 10px;
+  }
+
+  div.level:hover {
+    border: 5px solid red;
+  }
+
+  div.difficult {
+    width: calc(100vh/3);
+    height: calc(100vh/3);
+    background-color: lightblue;
+    position: absolute;
+    border-radius: 10px;
+    margin-top: 10vh;
+    border-style: outset;
+    border-width: 10px;
+  }
+
+  div.difficult:hover {
+    border: 5px outset;
+  }
+
+  #easy {
+    margin: 10% 20% 20% 20%;
+  }
+
+  #hard {
+    margin: 10% 20% 20% 60%;
+  }
+
+  div.win {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: calc(50vh);
+    left: calc(50vw);
+    background: url("media/win.png") no-repeat center;
+    background-size: 100%;
+  }
+
+  div.next {
+    width: calc(20vw);
+    height: calc(20vw);
+    position: absolute;
+    top: calc(50vh);
+    left: calc(50vw);
+    background: url("media/next.png") no-repeat center;;
+    background-size: 100%;
+    visibility: hidden;
+  }
+
+  #L1 {
+    background: url("media/stage1/L1C1M.png") no-repeat center;;
+    background-size: 100%;
+  }
+
+  #L2 {
+    background: url("media/stage2/L2C1M.png") no-repeat center;;
+    background-size: 100%;
+  }
+
+  #L3 {
+    background: url("media/stage3/L3C1M.png") no-repeat center;;
+    background-size: 100%;
+  }
+
+  /* For mobile phones */
+  @media screen and (max-width: 590px) {
+    body, main {
+      display: flex;
+    }
+    
+    section,
+    footer {
+      width: 100vw;
+      max-width: calc(100vh - 264px);
+      float: none;
+    }
+
+    footer {
+      height: 50vh;
+    }
+
+    section {
+      height: 50vh;
+      max-height: 100vw;
+    }
+
+    div.draggable {
+      width: calc((100vw / 3) - 2px);
+      max-width: calc(((100vh - 264px) / 3) - 12px);
+      height: calc((100vw / 3) - 2px);
+      max-height: calc(((100vh - 264px) / 3) - 12px);
+    }
+
+    div.level {
+      width: calc(100vw/3);
+      max-width: calc((100vh/3) - 40px);
+      max-height: calc((100vh/3) - 40px);
+      height: calc(100vw/3);
+      background-color: lightblue;
+      margin: auto;
+      margin-top: 30px;
+      display: block;
+      border-radius: 10px;
+    }
+
+    div.difficult {
+      width: calc(100vw/3);
+      max-width: calc((100vh/3) - 40px);
+      max-height: calc((100vh/3) - 40px);
+      height: calc(100vw/3);
+      background-color: lightblue;
+      background: url("media/easy.png") no-repeat center;
+      background-size: 100%;
+      position: absolute;
+      margin-bottom: 30px;
+      margin-top: 10vh;
+      display: block;
+      border-radius: 10px;
+    }
+
+    #easy {
+      margin: 10% 0% 20% 0%;
+    }
+  
+    #hard {
+      margin: 60% 0% 20% 0%;
+    }
+
+    div.difficult:hover {
+      border-width: 10px;
+      border-color: "";
+    }
+  }
+  
+  /* Drag and drop CSS */
+  
+  #container {
+    touch-action: none;
+  }
+
+  div.dropzone .draggable {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  td .draggable {
+    position: static;
+  }
+  
+  .draggable {
+    position: absolute;
+    bottom: 0;
+    touch-action: none;
+  }
+  
+  .draggable.active {
+    pointer-events: none;
+    position: absolute !important;
+  }
+  
+  #container.dragging .dropzone * {
+    pointer-events: none;
+  }
+
+  div.active {
+    opacity: 0.8;
+  }
+  
